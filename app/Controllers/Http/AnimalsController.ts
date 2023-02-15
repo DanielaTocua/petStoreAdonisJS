@@ -32,12 +32,12 @@ export default class AnimalsController {
      public async actualizarAnimal({request}: HttpContextContract){
         const id = request.param('id');
         const animal = await Animal.findOrFail(id)
-        const data = request.all();
-        animal.nombre_animal = data.nombre_animal
-        animal.especie = data.especie
-        animal.raza = data.raza
-        animal.genero = data.genero
-        animal.edad = data.edad
+        const {nombre_animal,especie,raza,genero,edad} = request.all();
+        animal.nombre_animal = nombre_animal
+        animal.especie = especie
+        animal.raza = raza
+        animal.genero = genero
+        animal.edad = edad
         await animal.save()
         return {"msg": "Actualizado correctamente", "status": 200}
      }

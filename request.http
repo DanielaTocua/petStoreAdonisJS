@@ -1,6 +1,10 @@
-DELETE  http://localhost:3333/api/eliminar/2
+PUT http://localhost:3333/api/actualizar/1
 Content-Type: application/json
 
 {
-
+    "nombre_animal": "Perritu",
+    "especie":1,
+    "raza":1,
+    "genero":0,
+    "edad":7
 }
